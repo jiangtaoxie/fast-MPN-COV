@@ -20,14 +20,14 @@ We implement our Fast MPN-COV (i.e., iSQRT-COV) meta-layer under [PyTorch](https
         └── models
             └── resnet.py
 ```
- - We duplicated `vision/` and `main.py` from [pytorch/vision/](https://github.com/pytorch/vision) and [pytorch/examples/imagenet/](https://github.com/pytorch/examples/imagenet), respectively. And added our Fast MPN-COV meta-layer in `resnet.py`
+ - We duplicated `vision/` and `main.py` from [pytorch/vision/](https://github.com/pytorch/vision) and [pytorch/examples/imagenet/](https://github.com/pytorch/examples/tree/master/imagenet), respectively. And added our Fast MPN-COV meta-layer in `resnet.py`
 
 ## Installation
 
 1. Install [PyTorch](https://github.com/pytorch/pytorch) (0.4.0 or above)
 2. Download this repository.
 3. `cd vision/` and `sudo python setup.py install`
-3. Follow the [introduction](https://github.com/pytorch/examples/imagenet/README.md) of Pytorch to train a MPN-COV-ResNet model.
+3. Follow the [introduction](https://github.com/pytorch/examples/tree/master/imagenet) of Pytorch to train a MPN-COV-ResNet model.
 
 ## Usage
 ### Insert fast MPN-COV layer into your network
