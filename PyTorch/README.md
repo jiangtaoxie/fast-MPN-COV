@@ -35,7 +35,7 @@ We implement our Fast MPN-COV (i.e., iSQRT-COV) meta-layer under [PyTorch](https
 
 ```python
 from MPNCOV.python import MPNCOV
-```  
+```
 2. Add layers to your network
 
 ```python
