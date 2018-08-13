@@ -45,7 +45,7 @@ In this paper, we propose a fast MPN-COV method for computing matrix square root
              <td style="text-align:center;">21.71</td>
              <td style="text-align:center;">6.13</td>
              <td style="text-align:center;"><a href="https://drive.google.com/file/d/132PzY3eVDuGg8ROz5wON5FTC2E2o12Ck/view?usp=sharing">217.3MB</a></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=132PzY3eVDuGg8ROz5wON5FTC2E2o12Ck">217.3MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/16TsQWwY7iWrvwTE43dwgHQ">217.3MB</a></td>
          </tr>
          <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
