@@ -15,7 +15,7 @@ This repository contains the source code and models trained on ImageNet 2012 dat
                year = {2018}
          }
 
-In this paper, we propose a fast MPN-COV method for computing matrix square root normalization, which is very efficient, scalable to multiple-GPU configuration, while enjoying matching performance with [MPN-COV](https://github.com/jiangtaoxie/MPN-COV-ConvNet). You can visit our [project page](http://www.peihuali.org/iSQRT-COV) for more details.
+In this paper, we propose a fast MPN-COV method for computing matrix square root normalization, which is very efficient, scalable to multiple-GPU configuration, while enjoying matching performance with [MPN-COV](https://github.com/jiangtaoxie/MPN-COV). You can visit our [project page](http://www.peihuali.org/iSQRT-COV) for more details.
 
 ## Implementations
 
