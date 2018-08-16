@@ -334,16 +334,6 @@ namespace vl { namespace impl {
             gpuMemset(n*n, T(0), I3);
             gpuMemset(n*n*L, T(0), dLdC);
             init_I_kernel<T><<<GET_BLOCKS(n),VL_CUDA_NUM_THREADS>>>(I3,(T)3,n);
-            /*debug
-            mxArray *x;
-            mxClassID classID = mxSINGLE_CLASS ;
-            mwSize dim[2];
-            dim[0] = n;dim[1] = n;
-            x  = mxCreateNumericArray(2,dim,classID,mxREAL);
-             T *test = (T*)mxGetData(x);
-            memcpy(test,YZ,sizeof(T)*n*n);
-            mexCallMATLAB(0,NULL,1,&x,"Watch");
-            */
             for(d = 0;d < L;d++){
                 derOutputOffset = d*n*(n+1)/2;
                 dLdCOffset      = d*n*n;
