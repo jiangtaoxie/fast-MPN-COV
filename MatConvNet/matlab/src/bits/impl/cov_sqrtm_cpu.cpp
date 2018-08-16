@@ -250,16 +250,6 @@ namespace vl { namespace impl {
             T  const* P  = NULL;
             T  P_dot_dLdP;
             vl::impl::operations<vl::VLDT_CPU, T>::fill(dLdC, n*n*L , (T)0);
-            /*debug
-            mxArray *x;
-            mxClassID classID = mxSINGLE_CLASS ;
-            mwSize dim[2];
-            dim[0] = n;dim[1] = n;
-            x  = mxCreateNumericArray(2,dim,classID,mxREAL);
-             T *test = (T*)mxGetData(x);
-            memcpy(test,YZ,sizeof(T)*n*n);
-            mexCallMATLAB(0,NULL,1,&x,"Watch");
-            */
             for(d = 0;d < n;d++){
                 I3[d*(n+1)] = 3;
             }
