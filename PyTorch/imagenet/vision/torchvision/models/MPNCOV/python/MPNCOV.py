@@ -116,7 +116,7 @@ class Triuvec(Function):
          x = x.reshape(batchSize, dim*dim)
          I = torch.ones(dim,dim).triu().t().reshape(dim*dim)
          index = I.nonzero()
-         y = torch.zeros(batchSize,dim*(dim+1)/2,device = x.device)
+         y = torch.zeros(batchSize,int(dim*(dim+1)/2),device = x.device)
          for i in range(batchSize):
             y[i, :] = x[i, index].t()
          ctx.save_for_backward(input,index)
