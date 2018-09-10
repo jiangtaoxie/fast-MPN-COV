@@ -111,7 +111,7 @@ class ResNet(nn.Module):
                                bias=False)
         self.layer_reduce_bn = nn.BatchNorm2d(256)
         self.layer_reduce_relu = nn.ReLU(inplace=True)
-        self.fc = nn.Linear(256*(256+1)/2, num_classes)
+        self.fc = nn.Linear(int(256*(256+1)/2), num_classes)
 
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
