@@ -3,7 +3,7 @@ import math
 import torch.utils.model_zoo as model_zoo
 import torch
 from MPNCOV.python import MPNCOV
-__all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet23', 'resnet50', 'resnet101',
+__all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
            'resnet152']
 
 
@@ -184,16 +184,6 @@ def resnet34(pretrained=False, **kwargs):
         model.load_state_dict(model_zoo.load_url(model_urls['resnet34']))
     return model
 
-def resnet23(pretrained=False, **kwargs):
-    """Constructs a ResNet-23 model.
-
-    Args:
-        pretrained (bool): If True, returns a model pre-trained on ImageNet
-    """
-    model = ResNet(Bottleneck, [1, 2, 2, 2], **kwargs)
-    if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['resnet50']))
-    return model
 
 def resnet50(pretrained=False, **kwargs):
     """Constructs a ResNet-50 model.
