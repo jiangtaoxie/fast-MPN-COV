@@ -1,7 +1,9 @@
 # Fast MPN-COV (i.e., iSQRT-COV)
 
 Created by [Jiangtao Xie](http://jiangtaoxie.github.io) and [Peihua Li](http://www.peihuali.org)
-
+<div>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="http://peihuali.org/pictures/fast_MPN-COV.JPG" width="80%"/>
+</div>
 
 ## Introduction
 
