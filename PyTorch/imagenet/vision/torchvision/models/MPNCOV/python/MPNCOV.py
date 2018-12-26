@@ -114,11 +114,10 @@ class Triuvec(Function):
          dim = x.data.shape[1]
          dtype = x.dtype
          x = x.reshape(batchSize, dim*dim)
-         I = torch.ones(dim,dim).triu().t().reshape(dim*dim)
+         I = torch.ones(dim,dim).triu().reshape(dim*dim)
          index = I.nonzero()
          y = torch.zeros(batchSize,int(dim*(dim+1)/2),device = x.device)
-         for i in range(batchSize):
-            y[i, :] = x[i, index].t()
+         y = x[:,index]
          ctx.save_for_backward(input,index)
          return y
      @staticmethod
@@ -128,10 +127,8 @@ class Triuvec(Function):
          batchSize = x.data.shape[0]
          dim = x.data.shape[1]
          dtype = x.dtype
-         grad_input = torch.zeros(batchSize,dim,dim,device = x.device,requires_grad=False)
-         grad_input = grad_input.reshape(batchSize,dim*dim)
-         for i in range(batchSize):
-            grad_input[i,index] = grad_output[i,:].reshape(index.size(),1)
+         grad_input = torch.zeros(batchSize,dim*dim,device = x.device,requires_grad=False)
+         grad_input[:,index] = grad_output
          grad_input = grad_input.reshape(batchSize,dim,dim)
          return grad_input
 
