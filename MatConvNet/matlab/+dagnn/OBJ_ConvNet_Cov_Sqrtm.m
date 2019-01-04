@@ -88,9 +88,9 @@ classdef OBJ_ConvNet_Cov_Sqrtm < dagnn.Layer
    
     %% backward function
     function [derInputs, derParams] = backward(self, inputs, params, derOutputs, outputs)
-            [derInputs{1}] = vl_nncov_sqrtm(inputs{1}, outputs{2}, 
-                                            outputs{3}, derOutputs{1},
-                                            'coef', self.coef, 'iterNum', 
+            [derInputs{1}] = vl_nncov_sqrtm(inputs{1}, outputs{2}, ...
+                                            outputs{3}, derOutputs{1},...
+                                            'coef', self.coef, 'iterNum', ...
                                             self.iterNum,  self.cudnn{:});
        
             derParams  = {} ;
