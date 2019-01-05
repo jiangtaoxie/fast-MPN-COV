@@ -23,7 +23,7 @@ In this paper, we propose a fast MPN-COV method for computing matrix square root
 
 1. [PyTorch Implementation](./PyTorch)
 2. [TensorFlow Implemention](./TensorFlow)(coming soon)
-3. [MatConvNet Implementation](./MatConvNet)
+3. [MatConvNet Implementation](https://github.com/jiangtaoxie/matconvnet.fast-mpn-cov)
 
 
 ## Classification results
