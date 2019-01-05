@@ -85,17 +85,17 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 3. `pip install -r requirement.txt`
 
 #### for training from scracth
-1. `cp trainingFromScratch/train.sh ./train.sh`
+1. `cp trainingFromScratch/train.sh ./`
 2.  modify the dataset path in `train.sh`
 3. `sh train.sh`
 
 #### for finetuning our fast MPN-COV model
-1. `cp finetune/finetune.sh ./finetune.sh`
+1. `cp finetune/finetune.sh ./`
 2.  modify the dataset path in `finetune.sh`
 3. `sh finetune.sh`
 
 #### for finetuning VGG-model by using BCNN
-1. `cp finetune/two_stage_finetune.sh ./two_stage_finetune.sh`
+1. `cp finetune/two_stage_finetune.sh ./`
 2.  modify the dataset path in `two_stage_finetune.sh`
 3. `sh two_stage_finetune.sh`
 
