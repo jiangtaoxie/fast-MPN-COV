@@ -65,15 +65,15 @@ parser.add_argument('--seed', default=None, type=int,
 parser.add_argument('--gpu', default=None, type=int,
                     help='GPU id to use.')
 parser.add_argument('--modeldir', default=None, type=str,
-                    help='define the dimension of attention module')
+                    help='director of checkpoint')
 parser.add_argument('--representation', default=None, type=str,
-                    help='define the representation')
+                    help='define the representation method')
 parser.add_argument('--num-classes', default=None, type=int,
-                    help='define the dimension of attention module')
+                    help='define the number of classes')
 parser.add_argument('--freezed-layer', default=None, type=int,
-                    help='define the dimension of attention module')
+                    help='define the end of freezed layer')
 parser.add_argument('--store-model-everyepoch', dest='store_model_everyepoch', action='store_true',
-                    help='if store checkpoint in every epoch')
+                    help='store checkpoint in every epoch')
 parser.add_argument('--classifier-factor', default=None, type=int,
                     help='define the factor of classifier')
 parser.add_argument('--benchmark', default=None, type=str,
