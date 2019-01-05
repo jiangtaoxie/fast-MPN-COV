@@ -44,7 +44,6 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 ### Created and Modified
 
 ```
-.
 ├── main.py
 ├── imagepreprocess.py
 ├── functions.py
@@ -175,9 +174,9 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
          <th style="text-align:center;"></th>
          <th style="text-align:center;">Method</th>
          <th style="text-align:center;">Dimension</th>
-         <th style="text-align:center;"><a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">Birds</a><br/><img src="http://jtxie.com/images/bird.jpg" width="50px"></th>
-         <th style="text-align:center;"><a href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">Aircrafts</a><br/><img src="http://jtxie.com/images/aircraft.jpeg" width="50px"></th>
-         <th style="text-align:center;"><a href="http://www.robots.ox.ac.uk/~vgg/data/oid/">Cars</a><br/><img src="http://jtxie.com/images/cars.jpg" width="50px"></th>
+         <th style="text-align:center;"><a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">Birds</a></th>
+         <th style="text-align:center;"><a href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">Aircrafts</a></th>
+         <th style="text-align:center;"><a href="http://www.robots.ox.ac.uk/~vgg/data/oid/">Cars</a></th>
      </tr>
      <tr>
          <td rowspan="4" style="text-align:center;">ResNet-50</td>
