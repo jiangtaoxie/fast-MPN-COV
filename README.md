@@ -7,7 +7,7 @@ Created by [Jiangtao Xie](http://jiangtaoxie.github.io) and [Peihua Li](http://w
 
 ## Introduction
 
-This repository contains the source code and models trained on ImageNet 2012 dataset for the following paper:
+This repository contains the source code under PyTorch framework and models trained on ImageNet 2012 dataset for the following paper:
 
          @InProceedings{Li_2018_CVPR,
                author = {Li, Peihua and Xie, Jiangtao and Wang, Qilong and Gao, Zilin},
@@ -19,12 +19,76 @@ This repository contains the source code and models trained on ImageNet 2012 dat
 
 In this paper, we propose a fast MPN-COV method for computing matrix square root normalization, which is very efficient, scalable to multiple-GPU configuration, while enjoying matching performance with [MPN-COV](https://github.com/jiangtaoxie/MPN-COV). You can visit our [project page](http://www.peihuali.org/iSQRT-COV) for more details.
 
-## Implementations
+## Implementation details
+We implement our Fast MPN-COV (i.e., iSQRT-COV) [meta-layer](./src/representation/MPNCOV.py) under [PyTorch](https://pytorch.org/) package. Note that though autograd package of PyTorch 0.4.0 or above can compute correctly gradients of our meta-layer, that of PyTorch 0.3.0 fails. As such, we decide to implement the backpropagation of our meta-layer without using autograd package, which works well for both PyTorch release 0.3.0 and 0.4.0.
 
-1. [PyTorch Implementation](./PyTorch)
-2. [TensorFlow Implemention](./TensorFlow)(coming soon)
-3. [MatConvNet Implementation](https://github.com/jiangtaoxie/matconvnet.fast-mpn-cov)
+For making our Fast MPN-COV meta layer can be added in a network conveniently, we reconstruct pytorch official demo [imagenet/](https://github.com/pytorch/examples/tree/master/imagenet) and [models/](https://github.com/pytorch/vision/torchvision/models). In which, we divide any network for three part: 1) features extractor; 2) global image representation; 3) classifier. As such, we can arbitrarily combine a network with our or some other global image representation methods (e.g.,Global average pooling, Bilinear pooling, Compact bilinear pooling, etc.)
 
+**Call for contributions.** In this repository, we will keep updating for containing more networks and global image representation methods.
+
+- [x] Matrix power normalized cov pooling (MPNCOV)
+- [x] Bilinear CNN (BCNN)
+- [ ] Compact Bilinear pooling (CBP)
+- [ ] etc.
+
+### Created and Modified
+
+```
+.
+├── main.py
+├── imagepreprocess.py
+├── functions.py
+├── model_init.py
+├── src
+│   ├── network
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── inception.py
+│   │   ├── alexnet.py
+│   │   ├── mpncovresnet.py
+│   │   ├── resnet.py
+│   │   └── vgg.py
+│   ├── representation
+│   │   ├── __init__.py
+│   │   ├── MPNCOV.py
+│   │   ├── GAvP.py
+│   │   ├── BCNN.py
+│   │   └── Custom.py
+│   └── torchviz
+│       ├── __init__.py
+│       └── dot.py
+├── trainingFromScratch
+│    └── train.sh
+└── finetune
+        ├── finetune.sh
+        └── two_stage_finetune.sh
+```
+##### For more convenient training and finetuning, we
+
+-  implement some functions for plotting convergence curve.  
+-  adopt network visualization tool [pytorchviz](https://github.com/szagoruyko/pytorchviz) for plotting network structure.
+- use shell file to manage the process.
+
+## Installation and Usage
+
+1. Install [PyTorch](https://github.com/pytorch/pytorch) (0.4.0 or above)
+2. type `git clone https://github.com/jiangtaoxie/fast-MPN-COV`
+3. `pip install -r requirement.txt`
+
+#### for training from scracth
+1. `cp trainingFromScratch/train.sh ./train.sh`
+2.  modify the dataset path in `train.sh`
+3. `sh train.sh`
+
+#### for finetuning our fast MPN-COV model
+1. `cp finetune/finetune.sh ./finetune.sh`
+2.  modify the dataset path in `finetune.sh`
+3. `sh finetune.sh`
+
+#### for finetuning VGG-model by using BCNN
+1. `cp finetune/two_stage_finetune.sh ./two_stage_finetune.sh`
+2.  modify the dataset path in `two_stage_finetune.sh`
+3. `sh two_stage_finetune.sh`
 
 ## Classification results
 
@@ -101,9 +165,9 @@ In this paper, we propose a fast MPN-COV method for computing matrix square root
          <th style="text-align:center;"></th>
          <th style="text-align:center;">Method</th>
          <th style="text-align:center;">Dimension</th>
-         <th style="text-align:center;"><a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">Birds</a><br/><img src="images/bird.jpg" width="50px"></th>
-         <th style="text-align:center;"><a href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">Aircrafts</a><br/><img src="images/aircraft.jpeg" width="50px"></th>
-         <th style="text-align:center;"><a href="http://www.robots.ox.ac.uk/~vgg/data/oid/">Cars</a><br/><img src="images/cars.jpg" width="50px"></th>
+         <th style="text-align:center;"><a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">Birds</a><br/><img src="http://jtxie.com/images/bird.jpg" width="50px"></th>
+         <th style="text-align:center;"><a href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">Aircrafts</a><br/><img src="http://jtxie.com/images/aircraft.jpeg" width="50px"></th>
+         <th style="text-align:center;"><a href="http://www.robots.ox.ac.uk/~vgg/data/oid/">Cars</a><br/><img src="http://jtxie.com/images/cars.jpg" width="50px"></th>
      </tr>
      <tr>
          <td rowspan="4" style="text-align:center;">ResNet-50</td>
@@ -201,6 +265,10 @@ In this paper, we propose a fast MPN-COV method for computing matrix square root
 
 - Our method uses neither bounding boxes nor part annotations
 
+## Other Implementations
+
+1. [MatConvNet Implementation](https://github.com/jiangtaoxie/matconvnet.fast-mpn-cov)
+2. [TensorFlow Implemention](./TensorFlow)(coming soon)
 
 ## Contact
 
