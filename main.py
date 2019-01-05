@@ -75,7 +75,7 @@ parser.add_argument('--freezed-layer', default=None, type=int,
 parser.add_argument('--store-model-everyepoch', dest='store_model_everyepoch', action='store_true',
                     help='store checkpoint in every epoch')
 parser.add_argument('--classifier-factor', default=None, type=int,
-                    help='define the factor of classifier')
+                    help='define the multiply factor of classifier')
 parser.add_argument('--benchmark', default=None, type=str,
                     help='name of dataset')
 best_prec1 = 0
@@ -138,7 +138,7 @@ def main():
                         'weight_decay': args.weight_decay},]
         params_list.append({'params': model.classifier.parameters(),
                             'lr': args.lr*args.classifier_factor,
-                            'weight_decay': 0. if args.freezed_layer else args.weight_decay})
+                            'weight_decay': 0. if args.arch.startswith('vgg') else args.weight_decay})
     else:
         params_list = [{'params': model.features.parameters(), 'lr': args.lr,
                         'weight_decay': args.weight_decay},]

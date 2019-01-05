@@ -26,7 +26,17 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 
 **Call for contributions.** In this repository, we will keep updating for containing more networks and global image representation methods.
 
-- [x] Matrix power normalized cov pooling (MPNCOV)
+- [x] Alexnet
+- [x] VGG-Net
+- [x] ResNet
+- [x] MPNCOV-ResNet
+- [ ] Inception
+- [ ] DenseNet
+- [ ] ResNeXt
+- [ ] NASNet
+- [ ] etc.
+---
+- [x] Matrix power normalized covariance pooling (MPNCOV)
 - [x] Bilinear CNN (BCNN)
 - [ ] Compact Bilinear pooling (CBP)
 - [ ] etc.

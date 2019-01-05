@@ -2,7 +2,15 @@ import torch
 import torch.nn as nn
 
 class BCNN(nn.Module):
-     'Bilinear Pool'
+     """Bilinear Pool
+        implementation of Bilinear CNN (BCNN)
+        https://arxiv.org/abs/1504.07889v5
+
+     Args:
+         thresh: small positive number for computation stability
+         is_vec: whether the output is a vector or not
+         input_dim: the #channel of input feature
+     """
      def __init__(self, thresh=1e-8, is_vec = True, input_dim=2048):
          super(BCNN, self).__init__()
          self.thresh = thresh

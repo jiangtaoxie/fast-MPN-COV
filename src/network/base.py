@@ -9,12 +9,16 @@ from .mpncovresnet import *
 
 def get_basemodel(modeltype, pretrained=False):
     modeltype = globals()[modeltype]
-    # copying modules from pretrained models
     if pretrained == False:
        warn.warn('You will use model that randomly initialized!')
     return modeltype(pretrained=pretrained)
 
 class Basemodel(nn.Module):
+    """Load backbone model and reconstruct it into three part:
+       1) feature extractor
+       2) global image representaion
+       3) classifier
+    """
     def __init__(self, modeltype, pretrained=False):
         super(Basemodel, self).__init__()
         basemodel = get_basemodel(modeltype, pretrained)

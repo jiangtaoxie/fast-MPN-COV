@@ -12,7 +12,22 @@ import torch.nn as nn
 from torch.autograd import Function
 
 class MPNCOV(nn.Module):
+     """Matrix power normalized Covariance pooling (MPNCOV)
+        implementation of fast MPN-COV (i.e.,iSQRT-COV)
+        https://arxiv.org/abs/1712.01034
+
+     Args:
+         iterNum: #iteration of Newton-schulz method
+         is_sqrt: whether perform matrix square root or not
+         is_vec: whether the output is a vector or not
+         input_dim: the #channel of input feature
+         dimension_reduction: if None, it will not use 1x1 conv to
+                               reduce the #channel of feature.
+                              if 256 or others, the #channel of feature
+                               will be reduced to 256 or others.
+     """
      def __init__(self, iterNum=3, is_sqrt=True, is_vec=True, input_dim=2048, dimension_reduction=None):
+
          super(MPNCOV, self).__init__()
          self.iterNum=iterNum
          self.is_sqrt = is_sqrt
@@ -165,7 +180,6 @@ class Triuvec(Function):
          dim = x.data.shape[1]
          dtype = x.dtype
          grad_input = torch.zeros(batchSize,dim*dim,device = x.device,requires_grad=False)
-         #grad_input = grad_input.reshape(batchSize,dim*dim)
          grad_input[:,index] = grad_output
          grad_input = grad_input.reshape(batchSize,dim,dim)
          return grad_input
