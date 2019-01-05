@@ -54,7 +54,7 @@ batchsize=10
 epoch=100
 # The inital learning rate
 # decreased by step method
-lr=0.0025
+lr=1.2e-3
 lr_method=step
 lr_params=100
 # log method
@@ -62,8 +62,8 @@ lr_params=100
 
 #lr_method=log
 #lr_params=-1.1,-5.0
-weight_decay=1e-4
-classifier_factor=10
+weight_decay=1e-3
+classifier_factor=5
 #*********************************************
 echo "Start finetuning!"
 modeldir=Finetune/$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
