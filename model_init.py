@@ -30,7 +30,7 @@ class Newmodel(Basemodel):
                     m = self._freeze(m)
                 index_before_freezed_layer += 1
         if modeltype.startswith('alexnet') or modeltype.startswith('vgg'):
-            if not pretrianed:
+            if not pretrained:
                 self.classifier[0] = nn.Linear(fc_input_dim, 4096)
                 self.classifier[-1] = nn.Linear(4096, num_classes)
             else:
