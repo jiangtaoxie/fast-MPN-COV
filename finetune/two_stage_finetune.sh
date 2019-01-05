@@ -84,7 +84,7 @@ fi
 
 if [ ! -e $modeldir/*.pth.tar ]; then
 
-cp train.sh $modeldir
+cp two_stage_finetune.sh $modeldir
 
 python main.py $dataset\
                --pretrained\

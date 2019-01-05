@@ -79,7 +79,7 @@ if [ ! -d  "$modeldir" ]; then
 mkdir $modeldir
 
 fi
-cp train.sh $modeldir
+cp finetune.sh $modeldir
 
 python main.py $dataset\
                --benchmark $benchmark\
