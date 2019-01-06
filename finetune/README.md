@@ -65,7 +65,7 @@ By using our code, we reproduce the results of three popular fine-grained benchm
          <td style="text-align:center;">86.9</td>
          <td style="text-align:center;"><b>86.9</b></td>
          <td style="text-align:center;">90.6</td>
-         <td style="text-align:center;"><b>88.3</b></td>
+         <td style="text-align:center;"><b>90.5</b></td>
      </tr>
      </tr>
 </table>

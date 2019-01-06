@@ -34,7 +34,7 @@ def preprocess_strategy(dataset):
         ])
     elif dataset.startswith('Cars'):
         train_transforms = transforms.Compose([
-            transforms.Resize(448),
+            transforms.Resize((448,448)),
             transforms.CenterCrop(448),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
