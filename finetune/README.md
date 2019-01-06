@@ -32,11 +32,11 @@ By using our code, we reproduce the results of three popular fine-grained benchm
          <td style="text-align:center;">ResNet-101</td>
          <td style="text-align:center;">32K</td>
          <td style="text-align:center;">88.7</td>
-         <td style="text-align:center;">`TODO`</td>
+         <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">91.4</td>
-         <td style="text-align:center;">`TODO`</td>
+         <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">93.3</td>
-         <td style="text-align:center;">`TODO`</td>
+         <td style="text-align:center;">TODO</td>
      </tr>
 </table>
 
@@ -91,20 +91,20 @@ By using our code, we reproduce the results of three popular fine-grained benchm
          <td rowspan="2" style="text-align:center;">VGG-D</td>
          <td style="text-align:center;">16K</td>
          <td style="text-align:center;"></td>
-         <td style="text-align:center;"><b>`TODO` </b></td>
+         <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">-</td>
-         <td style="text-align:center;"><b> `TODO`</b></td>
+         <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">-</td>
-         <td style="text-align:center;"><b>`TODO`</b></td>
+         <td style="text-align:center;">TODO</td>
      </tr>
      <tr>
          <td style="text-align:center;">8K</td>
          <td style="text-align:center;"></td>
-         <td style="text-align:center;"><b>`TODO` </b></td>
+         <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">-</td>
-         <td style="text-align:center;"><b> `TODO`</b></td>
+         <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">-</td>
-         <td style="text-align:center;"><b>`TODO`</b></td>
+         <td style="text-align:center;">TODO</td>
      </tr>
      </tr>
 </table>
@@ -121,50 +121,30 @@ By using our code, we reproduce the results of three popular fine-grained benchm
      <tr>
          <td style="text-align:center;">ResNet-152</td>
          <td style="text-align:center;">2K</td>
-         <td rowspan="7" colspan="3" style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
+         <td rowspan="7" colspan="3" style="text-align:center;">TODO </td>
      </tr>
      <tr>
          <td style="text-align:center;">ResNet-101</td>
          <td style="text-align:center;">2K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
      </tr>
      <tr>
          <td style="text-align:center;">ResNet-50</td>
          <td style="text-align:center;">2K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
      </tr>
      <tr>
          <td style="text-align:center;">DenseNet</td>
          <td style="text-align:center;">1K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
      </tr>
      <tr>
          <td style="text-align:center;">Inception-v3</td>
          <td style="text-align:center;">2K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
      </tr>
      <tr>
          <td style="text-align:center;">VGG-D</td>
          <td style="text-align:center;">4K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
      </tr>
      <tr>
          <td style="text-align:center;">AlexNet</td>
          <td style="text-align:center;">4K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
      </tr>
 </table>
