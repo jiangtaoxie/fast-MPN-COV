@@ -2,7 +2,21 @@
 @file: MPNCOV.py
 @author: Jiangtao Xie
 @author: Peihua Li
+Please cite the paper below if you use the code:
 
+@InProceedings{Li_2018_CVPR,
+    author = {Li, Peihua and Xie, Jiangtao and Wang, Qilong and Gao, Zilin},
+    title = {Towards Faster Training of Global Covariance Pooling Networks by Iterative Matrix Square Root Normalization},
+    booktitle = { IEEE Int. Conf. on Computer Vision and Pattern Recognition (CVPR)},
+    month = {June},
+    year = {2018}
+}
+@article{Li2017,
+    author = {Peihua Li,Jiangtao Xie,Qilong Wang and Wangmeng Zuo},
+    title  = {Is Second-order Information Helpful for Large-scale Visual Recognition?},
+    journal= {International Conference on Computer Vision (ICCV)},
+    year   = {2017}
+}
 Copyright (C) 2018 Peihua Li and Jiangtao Xie
 
 All rights reserved.

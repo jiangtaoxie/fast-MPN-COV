@@ -1,7 +1,7 @@
 ## Fine-tune
 
 By using our code, we reproduce the results of three popular fine-grained benchmarks.(i.e., Bird, Aircrafts and Cars) We will keep updating the results of this page.
-#### MPNCOV (ours)
+#### MPN-COV (ours)
 <table>
      <tr>
          <th rowspan="2" style="text-align:center;">Backbone model</th>
@@ -32,15 +32,15 @@ By using our code, we reproduce the results of three popular fine-grained benchm
          <td style="text-align:center;">ResNet-101</td>
          <td style="text-align:center;">32K</td>
          <td style="text-align:center;">88.7</td>
-         <td style="text-align:center;"></td>
+         <td style="text-align:center;">`TODO`</td>
          <td style="text-align:center;">91.4</td>
-         <td style="text-align:center;"></td>
+         <td style="text-align:center;">`TODO`</td>
          <td style="text-align:center;">93.3</td>
-         <td style="text-align:center;"></td>
+         <td style="text-align:center;">`TODO`</td>
      </tr>
 </table>
 
-#### BCNN
+#### Bilinear CNN
 <table>
       <tr>
           <th rowspan="2" style="text-align:center;">Backbone model</th>
@@ -70,7 +70,7 @@ By using our code, we reproduce the results of three popular fine-grained benchm
      </tr>
 </table>
 
-#### CBP
+#### Compact bilinear pooling
 <table>
       <tr>
           <th rowspan="2" style="text-align:center;">Backbone model</th>
@@ -90,26 +90,26 @@ By using our code, we reproduce the results of three popular fine-grained benchm
      <tr>
          <td rowspan="2" style="text-align:center;">VGG-D</td>
          <td style="text-align:center;">16K</td>
-         <td style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
-         <td style="text-align:center;"><b> </b></td>
+         <td style="text-align:center;"></td>
+         <td style="text-align:center;"><b>`TODO` </b></td>
+         <td style="text-align:center;">-</td>
+         <td style="text-align:center;"><b> `TODO`</b></td>
+         <td style="text-align:center;">-</td>
+         <td style="text-align:center;"><b>`TODO`</b></td>
      </tr>
      <tr>
          <td style="text-align:center;">8K</td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
-         <td style="text-align:center;"> </td>
+         <td style="text-align:center;"></td>
+         <td style="text-align:center;"><b>`TODO` </b></td>
+         <td style="text-align:center;">-</td>
+         <td style="text-align:center;"><b> `TODO`</b></td>
+         <td style="text-align:center;">-</td>
+         <td style="text-align:center;"><b>`TODO`</b></td>
      </tr>
      </tr>
 </table>
 
-#### GAvP
+#### Global average pooling
 <table>
      <tr>
          <th style="text-align:center;">Backbone model</th>
@@ -121,7 +121,7 @@ By using our code, we reproduce the results of three popular fine-grained benchm
      <tr>
          <td style="text-align:center;">ResNet-152</td>
          <td style="text-align:center;">2K</td>
-         <td style="text-align:center;"><b> </b></td>
+         <td rowspan="7" colspan="3" style="text-align:center;"><b> </b></td>
          <td style="text-align:center;"><b> </b></td>
          <td style="text-align:center;"><b> </b></td>
      </tr>
