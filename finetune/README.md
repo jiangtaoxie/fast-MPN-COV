@@ -1,6 +1,14 @@
 ## Fine-tune
 
 By using our code, we reproduce the results of three popular fine-grained benchmarks.(i.e., Bird, Aircrafts and Cars) We will keep updating the results of this page.
+
+#### Our experiments are running on
+- [x] PyTorch 0.5 or above
+- [x] 2 x 1080Ti
+- [x] Cuda 9.0 with CuDNN 7.0
+
+## Results
+All the reproduced results use neither bounding boxes nor part annotations.
 #### MPN-COV (ours)
 <table>
      <tr>

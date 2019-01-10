@@ -258,7 +258,7 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
      </tr>
      <tr>
          <td style="text-align:center;">HIHCA</td>
-         <td style="text-align:center;">9KK</td>
+         <td style="text-align:center;">9K</td>
          <td style="text-align:center;">85.3</td>
          <td style="text-align:center;">88.3</td>
          <td style="text-align:center;">91.7</td>
