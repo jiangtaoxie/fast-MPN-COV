@@ -119,12 +119,15 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
              <td>fast MPN-COV-ResNet50</td>
              <td style="text-align:center;">21.71</td>
              <td style="text-align:center;">6.13</td>
-             <td style="text-align:center;"><a href="https://drive.google.com/file/d/132PzY3eVDuGg8ROz5wON5FTC2E2o12Ck/view?usp=sharing">217.3MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/16TsQWwY7iWrvwTE43dwgHQ">217.3MB</a></td>
+             <td style="text-align:center;">~~<a href="">217.3MB</a>~~</td>
+             <td style="text-align:center;">~~<a href="">217.3MB</a>~~</td>
          </tr>
          <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
-             <td colspan="4" style="text-align:center;">coming soon</td>
+             <td style="text-align:center;">20.99</td>
+             <td style="text-align:center;">5.56</td>
+             <td style="text-align:center;">~~<a href="">289.9MB</a>~~</td>
+             <td style="text-align:center;">~~<a href="">289.9MB</a>~~</td>
          </tr>
          <tr>
              <td style="text-align:center">ResNet50</td>
