@@ -22,7 +22,7 @@ In this paper, we propose a fast MPN-COV method for computing matrix square root
 ## Implementation details
 We implement our Fast MPN-COV (i.e., iSQRT-COV) [meta-layer](./src/representation/MPNCOV.py) under [PyTorch](https://pytorch.org/) package. Note that though autograd package of PyTorch 0.4.0 or above can compute correctly gradients of our meta-layer, that of PyTorch 0.3.0 fails. As such, we decide to implement the backpropagation of our meta-layer without using autograd package, which works well for both PyTorch release 0.3.0 and 0.4.0.
 
-For making our Fast MPN-COV meta layer can be added in a network conveniently, we reconstruct pytorch official demo [imagenet/](https://github.com/pytorch/examples/tree/master/imagenet) and [models/](https://github.com/pytorch/vision/torchvision/models). In which, we divide any network for three part: 1) features extractor; 2) global image representation; 3) classifier. As such, we can arbitrarily combine a network with our or some other global image representation methods (e.g.,Global average pooling, Bilinear pooling, Compact bilinear pooling, etc.)
+For making our Fast MPN-COV meta layer can be added in a network conveniently, we reconstruct pytorch official demo [imagenet/](https://github.com/pytorch/examples/tree/master/imagenet) and [models/](https://github.com/pytorch/vision/tree/master/torchvision/models). In which, we divide any network for three part: 1) features extractor; 2) global image representation; 3) classifier. As such, we can arbitrarily combine a network with our or some other global image representation methods (e.g.,Global average pooling, Bilinear pooling, Compact bilinear pooling, etc.)
 
 **Call for contributions.** In this repository, we will keep updating for containing more networks and global image representation methods.
 
@@ -82,7 +82,7 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 
 1. Install [PyTorch](https://github.com/pytorch/pytorch) (0.4.0 or above)
 2. type `git clone https://github.com/jiangtaoxie/fast-MPN-COV`
-3. `pip install -r requirement.txt`
+3. `pip install -r requirements.txt`
 
 #### for training from scracth
 1. `cp trainingFromScratch/train.sh ./`

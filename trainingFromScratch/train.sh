@@ -18,7 +18,7 @@ Modify the following settings as you wish !
 #               resnet101, resnet152
 #mpncovresnet: mpncovresnet50, mpncovresnet101
 #inceptionv3
-#You can also add your own network in src/network 
+#You can also add your own network in src/network
 arch=mpncovresnet50
 #*********************************************
 
@@ -30,7 +30,7 @@ arch=mpncovresnet50
 #BCNN (bilinear pooling)
 #CBP (compact bilinear pooling)
 #...
-#You can also add your own method in src/representation 
+#You can also add your own method in src/representation
 image_representation=MPNCOV
 # short description of method
 description=reproduce
@@ -51,7 +51,7 @@ freeze_layer=0
 # Batch size
 batchsize=160
 # The number of total epochs for training
-epoch=60
+epoch=65
 # The inital learning rate
 # decreased by step method
 lr=0.1

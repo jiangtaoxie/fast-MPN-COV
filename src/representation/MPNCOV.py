@@ -53,11 +53,20 @@ class MPNCOV(nn.Module):
                nn.BatchNorm2d(self.dr),
                nn.ReLU(inplace=True)
              )
-         output_dim = self.dr if self.dr else input_dim 
+         output_dim = self.dr if self.dr else input_dim
          if self.is_vec:
              self.output_dim = int(output_dim*(output_dim+1)/2)
          else:
              self.output_dim = int(output_dim*output_dim)
+         self._init_weight()
+
+     def _init_weight(self):
+        for m in self.modules():
+            if isinstance(m, nn.Conv2d):
+                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+            elif isinstance(m, nn.BatchNorm2d):
+                nn.init.constant_(m.weight, 1)
+                nn.init.constant_(m.bias, 0)
 
      def _cov_pool(self, x):
          return Covpool.apply(x)
@@ -155,10 +164,10 @@ class Sqrtm(Function):
             for i in range(iterN-3, -1, -1):
                YZ = I3 - Y[:,i,:,:].bmm(Z[:,i,:,:])
                ZY = Z[:,i,:,:].bmm(Y[:,i,:,:])
-               dldY_ = 0.5*(dldY.bmm(YZ) - 
-                         Z[:,i,:,:].bmm(dldZ).bmm(Z[:,i,:,:]) - 
+               dldY_ = 0.5*(dldY.bmm(YZ) -
+                         Z[:,i,:,:].bmm(dldZ).bmm(Z[:,i,:,:]) -
                              ZY.bmm(dldY))
-               dldZ_ = 0.5*(YZ.bmm(dldZ) - 
+               dldZ_ = 0.5*(YZ.bmm(dldZ) -
                          Y[:,i,:,:].bmm(dldY).bmm(Y[:,i,:,:]) -
                             dldZ.bmm(ZY))
                dldY = dldY_
