@@ -98,15 +98,15 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 │   ├── ...
 │   └── classN
 └── val
-       ├── class1
-       │   ├── class1_001.jpg
-       │   ├── class1_002.jpg
-       |   └── ...
-       ├── class2
-       ├── class3
-       ├── ...
-       ├── ...
-       └── classN
+    ├── class1
+    │   ├── class1_001.jpg
+    │   ├── class1_002.jpg
+    |   └── ...
+    ├── class2
+    ├── class3
+    ├── ...
+    ├── ...
+    └── classN
 ```
 
 #### for training from scracth
