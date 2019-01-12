@@ -136,15 +136,20 @@ def main():
     if args.pretrained:
         params_list = [{'params': model.features.parameters(), 'lr': args.lr,
                         'weight_decay': args.weight_decay},]
+        params_list.append({'params': model.representation.parameters(), 'lr': args.lr,
+                        'weight_decay': args.weight_decay})
         params_list.append({'params': model.classifier.parameters(),
                             'lr': args.lr*args.classifier_factor,
                             'weight_decay': 0. if args.arch.startswith('vgg') else args.weight_decay})
     else:
         params_list = [{'params': model.features.parameters(), 'lr': args.lr,
                         'weight_decay': args.weight_decay},]
+        params_list.append({'params': model.representation.parameters(), 'lr': args.lr,
+                        'weight_decay': args.weight_decay})
         params_list.append({'params': model.classifier.parameters(),
                             'lr': args.lr*args.classifier_factor,
                             'weight_decay':args.weight_decay})
+
     optimizer = torch.optim.SGD(params_list, lr=args.lr,
                                 momentum=args.momentum,
                                 weight_decay=args.weight_decay)
