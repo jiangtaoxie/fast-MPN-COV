@@ -67,7 +67,7 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 │       ├── __init__.py
 │       └── dot.py
 ├── trainingFromScratch
-│    └── train.sh
+│       └── train.sh
 └── finetune
         ├── finetune.sh
         └── two_stage_finetune.sh
@@ -78,11 +78,36 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 -  adopt network visualization tool [pytorchviz](https://github.com/szagoruyko/pytorchviz) for plotting network structure.
 - use shell file to manage the process.
 
+
 ## Installation and Usage
 
 1. Install [PyTorch](https://github.com/pytorch/pytorch) (0.4.0 or above)
 2. type `git clone https://github.com/jiangtaoxie/fast-MPN-COV`
 3. `pip install -r requirements.txt`
+4. prepare the dataset as follows
+```
+.
+├── train
+│   ├── class1
+│   │   ├── class1_001.jpg
+│   │   ├── class1_002.jpg
+|   |   └── ...
+│   ├── class2
+│   ├── class3
+│   ├── ...
+│   ├── ...
+│   └── classN
+└── val
+       ├── class1
+       │   ├── class1_001.jpg
+       │   ├── class1_002.jpg
+       |   └── ...
+       ├── class2
+       ├── class3
+       ├── ...
+       ├── ...
+       └── classN
+```
 
 #### for training from scracth
 1. `cp trainingFromScratch/train.sh ./`
