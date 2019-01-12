@@ -144,15 +144,15 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
              <td>fast MPN-COV-ResNet50</td>
              <td style="text-align:center;">21.71</td>
              <td style="text-align:center;">6.13</td>
-             <td style="text-align:center;">~~<a href="">217.3MB</a>~~</td>
-             <td style="text-align:center;">~~<a href="">217.3MB</a>~~</td>
+             <td style="text-align:center;"><a href=""><s>217.3MB</s></a></td>
+             <td style="text-align:center;"><a href=""><s>217.3MB</s></a></td>
          </tr>
          <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
              <td style="text-align:center;">20.99</td>
              <td style="text-align:center;">5.56</td>
-             <td style="text-align:center;">~~<a href="">289.9MB</a>~~</td>
-             <td style="text-align:center;">~~<a href="">289.9MB</a>~~</td>
+             <td style="text-align:center;"><a href=""><s>289.9MB</s></a></td>
+             <td style="text-align:center;"><a href=""><s>289.9MB</s></a></td>
          </tr>
          <tr>
              <td style="text-align:center">ResNet50</td>
