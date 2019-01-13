@@ -18,7 +18,7 @@ Modify the following settings as you wish !
 #               resnet101, resnet152
 #mpncovresnet: mpncovresnet50, mpncovresnet101
 #inceptionv3
-#You can also add your own network in src/network 
+#You can also add your own network in src/network
 arch=mpncovresnet50
 #*********************************************
 
@@ -30,7 +30,7 @@ arch=mpncovresnet50
 #BCNN (bilinear pooling)
 #CBP (compact bilinear pooling)
 #...
-#You can also add your own method in src/representation 
+#You can also add your own method in src/representation
 image_representation=MPNCOV
 # short description of method
 description=reproduce
@@ -66,10 +66,10 @@ weight_decay=1e-3
 classifier_factor=5
 #*********************************************
 echo "Start finetuning!"
-modeldir=Finetune/$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
-if [ ! -d  "Finetune" ]; then
+modeldir=Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
+if [ ! -d  "Results" ]; then
 
-mkdir Finetune
+mkdir Results
 
 fi
 if [ ! -e $modeldir/*.pth.tar ]; then

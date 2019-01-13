@@ -7,7 +7,7 @@ Created by [Jiangtao Xie](http://jiangtaoxie.github.io) and [Peihua Li](http://w
 
 ## Introduction
 
-This repository contains the source code under PyTorch framework and models trained on ImageNet 2012 dataset for the following paper:
+This repository contains the source code under **PyTorch** framework and models trained on ImageNet 2012 dataset for the following paper:
 
          @InProceedings{Li_2018_CVPR,
                author = {Li, Peihua and Xie, Jiangtao and Wang, Qilong and Gao, Zilin},

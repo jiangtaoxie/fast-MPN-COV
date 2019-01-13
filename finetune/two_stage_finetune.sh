@@ -1,8 +1,8 @@
 set -e
 :<<!
 *****************Instruction*****************
-For fine-tuning a model in two stage way. 
-For example, in the first stage, only the 
+For fine-tuning a model in two stage way.
+For example, in the first stage, only the
 classifier is tuned, the previous layers act like
 a feature extactor, then all layers join the
 train phase.
@@ -19,7 +19,7 @@ Modify the following settings as you wish !
 #               resnet101, resnet152
 #mpncovresnet:mpncovresnet50, mpncovresnet101
 #inceptionv3
-#You can also add your own network in src/network 
+#You can also add your own network in src/network
 arch=vgg16
 #*********************************************
 
@@ -31,7 +31,7 @@ arch=vgg16
 #BCNN (bilinear pooling)
 #CBP (compact bilinear pooling)
 #...
-#You can also add your own method in src/representation 
+#You can also add your own method in src/representation
 image_representation=BCNN
 # short description of method
 description=reproduce
@@ -70,10 +70,10 @@ classifier_factor=1000
 
 #*************** First stage *****************
 echo "Start finetuning the first satge!"
-modeldir=Finetune/$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
-if [ ! -d  "Finetune" ]; then
+modeldir=Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
+if [ ! -d  "Results" ]; then
 
-mkdir Finetune
+mkdir Results
 
 fi
 if [ ! -d  "$modeldir" ]; then
