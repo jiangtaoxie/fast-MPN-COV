@@ -4,19 +4,10 @@
 @author: Peihua Li
 Please cite the paper below if you use the code:
 
-@InProceedings{Li_2018_CVPR,
-    author = {Li, Peihua and Xie, Jiangtao and Wang, Qilong and Gao, Zilin},
-    title = {Towards Faster Training of Global Covariance Pooling Networks by Iterative Matrix Square Root Normalization},
-    booktitle = { IEEE Int. Conf. on Computer Vision and Pattern Recognition (CVPR)},
-    month = {June},
-    year = {2018}
-}
-@article{Li2017,
-    author = {Peihua Li,Jiangtao Xie,Qilong Wang and Wangmeng Zuo},
-    title  = {Is Second-order Information Helpful for Large-scale Visual Recognition?},
-    journal= {International Conference on Computer Vision (ICCV)},
-    year   = {2017}
-}
+Peihua Li, Jiangtao Xie, Qilong Wang and Zilin Gao. Towards Faster Training of Global Covariance Pooling Networks by Iterative Matrix Square Root Normalization. IEEE Int. Conf. on Computer Vision and Pattern Recognition (CVPR), pp. 947-955, 2018.
+
+Peihua Li, Jiangtao Xie, Qilong Wang and Wangmeng Zuo. Is Second-order Information Helpful for Large-scale Visual Recognition? IEEE Int. Conf. on Computer Vision (ICCV),  pp. 2070-2078, 2017.
+
 Copyright (C) 2018 Peihua Li and Jiangtao Xie
 
 All rights reserved.
@@ -126,8 +117,8 @@ class Sqrtm(Function):
          I3 = 3.0*torch.eye(dim,dim,device = x.device).view(1, dim, dim).repeat(batchSize,1,1).type(dtype)
          normA = (1.0/3.0)*x.mul(I3).sum(dim=1).sum(dim=1)
          A = x.div(normA.view(batchSize,1,1).expand_as(x))
-         Y = torch.zeros(batchSize, iterN, dim, dim, requires_grad = False, device = x.device)
-         Z = torch.eye(dim,dim,device = x.device).view(1,dim,dim).repeat(batchSize,iterN,1,1)
+         Y = torch.zeros(batchSize, iterN, dim, dim, requires_grad = False, device = x.device).type(dtype)
+         Z = torch.eye(dim,dim,device = x.device).view(1,dim,dim).repeat(batchSize,iterN,1,1).type(dtype)
          if iterN < 2:
             ZY = 0.5*(I3 - A)
             Y[:,0,:,:] = A.bmm(ZY)
@@ -178,7 +169,7 @@ class Sqrtm(Function):
          for i in range(batchSize):
              grad_input[i,:,:] += (der_postComAux[i] \
                                    - grad_aux[i] / (normA[i] * normA[i])) \
-                                   *torch.ones(dim,device = x.device).diag()
+                                   *torch.ones(dim,device = x.device).diag().type(dtype)
          return grad_input, None
 
 class Triuvec(Function):
@@ -191,7 +182,7 @@ class Triuvec(Function):
          x = x.reshape(batchSize, dim*dim)
          I = torch.ones(dim,dim).triu().reshape(dim*dim)
          index = I.nonzero()
-         y = torch.zeros(batchSize,int(dim*(dim+1)/2),device = x.device)
+         y = torch.zeros(batchSize,int(dim*(dim+1)/2),device = x.device).type(dtype)
          y = x[:,index]
          ctx.save_for_backward(input,index)
          return y
@@ -202,7 +193,7 @@ class Triuvec(Function):
          batchSize = x.data.shape[0]
          dim = x.data.shape[1]
          dtype = x.dtype
-         grad_input = torch.zeros(batchSize,dim*dim,device = x.device,requires_grad=False)
+         grad_input = torch.zeros(batchSize,dim*dim,device = x.device,requires_grad=False).type(dtype)
          grad_input[:,index] = grad_output
          grad_input = grad_input.reshape(batchSize,dim,dim)
          return grad_input
