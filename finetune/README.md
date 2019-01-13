@@ -7,8 +7,10 @@ By using our code, we reproduce the results of three popular fine-grained benchm
 - [x] 2 x 1080Ti
 - [x] Cuda 9.0 with CuDNN 7.0
 
-## Results
-All the reproduced results use neither bounding boxes nor part annotations.
+## Results (top-1 accuracy rates, %)
+
+All the reproduced results use neither bounding boxes nor part annotations, and the SVM classifier is not performed.
+
 #### MPN-COV (ours)
 <table>
      <tr>
