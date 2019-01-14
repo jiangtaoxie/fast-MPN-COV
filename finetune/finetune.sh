@@ -66,7 +66,7 @@ weight_decay=1e-3
 classifier_factor=5
 #*********************************************
 echo "Start finetuning!"
-modeldir=Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
+modeldir=Results/Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
 if [ ! -d  "Results" ]; then
 
 mkdir Results

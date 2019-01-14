@@ -66,7 +66,7 @@ weight_decay=1e-4
 classifier_factor=1
 #*********************************************
 echo "Start training!"
-modeldir=FromScratch-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
+modeldir=Results/FromScratch-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
 
 if [ ! -d  "Results" ]; then
 

@@ -70,7 +70,7 @@ classifier_factor=1000
 
 #*************** First stage *****************
 echo "Start finetuning the first satge!"
-modeldir=Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
+modeldir=Results/Finetune-$benchmark-$arch-$image_representation-$description-lr$lr-bs$batchsize
 if [ ! -d  "Results" ]; then
 
 mkdir Results
