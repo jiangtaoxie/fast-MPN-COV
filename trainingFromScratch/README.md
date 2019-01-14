@@ -3,7 +3,7 @@
 By using our code, we reproduce the results of our Fast MPN-COV ResNet models on ImageNet 2012.
 
 #### Our experiments are running on
-- [x] PyTorch 0.5 or above
+- [x] PyTorch 0.4 or above
 - [x] 2 x 1080Ti
 - [x] Cuda 9.0 with CuDNN 7.0
 

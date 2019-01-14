@@ -211,7 +211,7 @@ def main():
     if args.evaluate:
         validate(val_loader, model, criterion)
         return
-    # make director for store checkpoint files
+    # make directory for storing checkpoint files
     if os.path.exists(args.modeldir) is not True:
         os.mkdir(args.modeldir)
     stats_ = stats(args.modeldir, args.start_epoch)
@@ -244,7 +244,7 @@ def main():
         plot_curve(stats_, args.modeldir, True)
         data = stats_
         sio.savemat(os.path.join(args.modeldir,'stats.mat'), {'data':data})
-        
+
 
 
 
@@ -434,4 +434,3 @@ def accuracy(output, target, topk=(1,)):
 
 if __name__ == '__main__':
     main()
-
