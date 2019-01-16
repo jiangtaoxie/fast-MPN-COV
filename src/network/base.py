@@ -34,7 +34,7 @@ class Basemodel(nn.Module):
         if modeltype.startswith('densenet'):
             basemodel = self._reconstruct_densenet(basemodel)
         if modeltype.startswith('mpncovresnet'):
-            basemodel = self._reconstruct_mpncovresnet(basemodel) # 
+            basemodel = self._reconstruct_mpncovresnet(basemodel) #
         self.features = basemodel.features
         self.representation = basemodel.representation
         self.classifier = basemodel.classifier
@@ -61,7 +61,7 @@ class Basemodel(nn.Module):
         return model
     def _reconstruct_resnet(self, basemodel):
         model = nn.Module()
-        model.features = nn.Sequential(*list(basemodel.children())[:-1])
+        model.features = nn.Sequential(*list(basemodel.children())[:-2])
         model.representation = basemodel.avgpool
         model.classifier = basemodel.fc
         model.representation_dim=basemodel.fc.weight.size(1)
@@ -103,7 +103,7 @@ class Basemodel(nn.Module):
             model.representation_dim=basemodel.layer_reduce.weight.size(1)
         model.representation = None
         model.classifier = basemodel.fc
-        
+
         return model
     def forward(self, x):
         x = self.features(x)
