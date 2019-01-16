@@ -40,7 +40,7 @@ parser.add_argument('--lr', '--learning-rate', default=0.1, type=float,
                     metavar='LR', help='initial learning rate')
 parser.add_argument('--lr-method', default='step', type=str,
                     help='method of learning rate')
-parser.add_argument('--lr-params', default=[], dest='lr_params',
+parser.add_argument('--lr-params', default=[], dest='lr_params',nargs='*',type=float,
                     action='append', help='params of lr method')
 parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
                     help='momentum')
@@ -379,7 +379,7 @@ class Learning_rate_generater(object):
         self.lr_factor = lr_factor
         self.lr = lr
     def step(self, params, total_epoch):
-        decrease_until = decode_params(params)
+        decrease_until = params[0]
         decrease_num = len(decrease_until)
         base_factor = 0.1
         lr_factor = []
@@ -393,7 +393,7 @@ class Learning_rate_generater(object):
             lr.append(args.lr*lr_factor[epoch])
         return lr_factor, lr
     def log(self, params, total_epoch):
-        params = decode(params)
+        params = params[0]
         left_range = params[0]
         right_range = params[1]
         np_lr = np.logspace(left_range, right_range, total_epoch)

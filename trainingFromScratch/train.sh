@@ -56,12 +56,12 @@ epoch=65
 # decreased by step method
 lr=0.1
 lr_method=step
-lr_params=30,45,60
+lr_params=30\ 45\ 60
 # log method
 # description: lr = logspace(params1, params2, #epoch)
 
 #lr_method=log
-#lr_params=-1.1,-5.0
+#lr_params=-1.1\ -5.0
 weight_decay=1e-4
 classifier_factor=1
 #*********************************************

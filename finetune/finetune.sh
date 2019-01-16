@@ -61,7 +61,7 @@ lr_params=100
 # description: lr = logspace(params1, params2, #epoch)
 
 #lr_method=log
-#lr_params=-1.1,-5.0
+#lr_params=-1.1\ -5.0
 weight_decay=1e-3
 classifier_factor=5
 #*********************************************
