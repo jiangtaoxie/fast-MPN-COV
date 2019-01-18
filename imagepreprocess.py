@@ -55,7 +55,7 @@ def preprocess_strategy(dataset):
         ])
         val_transforms = transforms.Compose([
             transforms.Resize(256),
-            transforms.CenterCrop(244),
+            transforms.CenterCrop(224),
             transforms.ToTensor(),
             normalize,
         ])
