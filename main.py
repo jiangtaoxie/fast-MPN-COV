@@ -159,11 +159,8 @@ def main():
         model.cuda()
         model = torch.nn.parallel.DistributedDataParallel(model)
     else:
-        if args.arch.startswith('alexnet') or args.arch.startswith('vgg'):
-            model.features = torch.nn.DataParallel(model.features)
-            model.cuda()
-        else:
-            model = torch.nn.DataParallel(model).cuda()
+        model.features = torch.nn.DataParallel(model.features)
+        model.cuda()
 
     # define loss function (criterion) and optimizer
     criterion = nn.CrossEntropyLoss().cuda(args.gpu)
