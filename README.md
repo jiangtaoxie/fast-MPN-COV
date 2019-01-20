@@ -17,7 +17,7 @@ This repository contains the source code under **PyTorch** framework and models 
                year = {2018}
          }
 
-In this paper, we propose a fast MPN-COV method for computing matrix square root normalization, which is very efficient, scalable to multiple-GPU configuration, while enjoying matching performance with [MPN-COV](https://github.com/jiangtaoxie/MPN-COV). You can visit our [project page](http://www.peihuali.org/iSQRT-COV) for more details.
+This paper concerns an iterative matrix square root normalization network (called fast MPN-COV), which is very efficient, fit for large-scale datasets, as opposed to its predecessor (i.e., [MPN-COV](https://github.com/jiangtaoxie/MPN-COV) published in ICCV17) that performs matrix power normalization by Eigen-decompositon. The code on bilinear CNN (B-CNN), compact bilinear pooling and global average pooling etc. is also released for both training from scratch and finetuning. If you use the code, please cite this [fast MPN-COV work](http://peihuali.org/iSQRT-COV/iSQRT-COV_bib.htm)  and its predecessor (i.e., [MPN-COV](http://peihuali.org/MPN-COV/MPN-COV_bib.htm)).
 
 ## Classification results
 
