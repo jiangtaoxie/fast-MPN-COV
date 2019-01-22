@@ -59,7 +59,7 @@ def preprocess_strategy(dataset):
             transforms.Resize(448),
             CenterCropWithFlip(448),
             transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
-            transforms.Lambda(lambda crops: torch.stack([normalize()(crop) for crop in crops])),
+            transforms.Lambda(lambda crops: torch.stack([normalize(crop) for crop in crops])),
         ])
     elif dataset.startswith('Aircraft'):
         train_transforms = transforms.Compose([
