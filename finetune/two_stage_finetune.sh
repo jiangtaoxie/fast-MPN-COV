@@ -48,7 +48,7 @@ num_classes=200
 #****************Hyper-parameters*************
 
 # Freeze the layers before a certain layer.
-freeze_layer=31
+freeze_layer=30
 # Batch size
 batchsize=40
 # The number of total epochs for training

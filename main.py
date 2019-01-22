@@ -407,26 +407,24 @@ class Learning_rate_generater(object):
         decrease_until = params[0]
         decrease_num = len(decrease_until)
         base_factor = 0.1
-        lr_factor = []
-        lr = []
-        flag = 0
-        for epoch in range(total_epoch):
-            if flag < decrease_num:
-                if epoch >= decrease_until[flag]:
-                    flag+=1
-            lr_factor.append(np.power(base_factor,flag))
-            lr.append(args.lr*lr_factor[epoch])
+        lr_factor = torch.ones(total_epoch, dtype=torch.double)
+        lr = [args.lr]
+        for num in range(decrease_num):
+            if decrease_until[num] < total_epoch:
+                lr_factor[int(decrease_until[num])] = base_factor
+        for epoch in range(1,total_epoch):
+            lr.append(lr[-1]*lr_factor[epoch])
         return lr_factor, lr
     def log(self, params, total_epoch):
         params = params[0]
         left_range = params[0]
         right_range = params[1]
         np_lr = np.logspace(left_range, right_range, total_epoch)
-        lr_factor = []
-        lr = []
-        for epoch in range(total_epoch):
+        lr_factor = [1]
+        lr = [np_lr[0]]
+        for epoch in range(1, total_epoch):
             lr.append(np_lr[epoch])
-            lr_factor.append(np_lr[epoch]/np_lr[0])
+            lr_factor.append(np_lr[epoch]/np_lr[epoch-1])
         if lr[0] != args.lr:
             args.lr = lr[0]
         return lr_factor, lr
@@ -435,9 +433,14 @@ class Learning_rate_generater(object):
 def adjust_learning_rate(optimizer, lr_factor, epoch):
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
     #lr = args.lr * (0.1 ** (epoch // 30))
-    print('the learning rate is set to {0:.5f}'.format(lr_factor[epoch]*args.lr))
+    groups = ['features']
+    groups.append('representation')
+    groups.append('classifier')
+    num_group = 0
     for param_group in optimizer.param_groups:
-        param_group['lr'] = lr_factor[epoch]*args.lr
+        param_group['lr'] *= lr_factor[epoch]
+        print('the learning rate is set to {0:.5f} in {1:} part'.format(param_group['lr'], groups[num_group]))
+        num_group += 1
 
 
 def accuracy(output, target, topk=(1,)):
