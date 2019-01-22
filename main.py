@@ -185,7 +185,7 @@ def main():
     # Data loading code
     traindir = os.path.join(args.data, 'train')
     valdir = os.path.join(args.data, 'val')
-    train_transforms, val_transforms = preprocess_strategy(args.benchmark)
+    train_transforms, val_transforms, evaluate_transforms = preprocess_strategy(args.benchmark)
 
     train_dataset = datasets.ImageFolder(
         traindir,
@@ -205,7 +205,16 @@ def main():
         batch_size=args.batch_size, shuffle=False,
         num_workers=args.workers, pin_memory=True)
 
+    ## init evaluation data loader
+    if evaluate_transforms is not None:
+        evaluate_loader = torch.utils.data.DataLoader(
+            datasets.ImageFolder(valdir, evaluate_transforms),
+            batch_size=args.batch_size, shuffle=False,
+            num_workers=args.workers, pin_memory=True)
+
     if args.evaluate:
+        if evaluate_transforms is not None:
+            validate(evaluate_loader, model, criterion)
         validate(val_loader, model, criterion)
         return
     # make directory for storing checkpoint files
@@ -241,6 +250,13 @@ def main():
         plot_curve(stats_, args.modeldir, True)
         data = stats_
         sio.savemat(os.path.join(args.modeldir,'stats.mat'), {'data':data})
+    if evaluate_transforms is not None:
+        model_file = os.path.join(args.modeldir, 'model_best.pth.tar')
+        print("=> loading best model '{}'".format(model_file))
+        print("=> start evaluation")
+        best_model = torch.load(model_file)
+        model.load_state_dict(best_model['state_dict'])
+        validate(evaluate_loader, model, criterion)
 
 
 
@@ -312,7 +328,14 @@ def validate(val_loader, model, criterion):
             target = target.cuda(args.gpu, non_blocking=True)
 
             # compute output
-            output = model(input)
+            ## modified by jiangtao xie
+            if len(input.size()) > 4:# 5-D tensor
+                bs, crops, ch, h, w = input.size()
+                output = model(input.view(-1, ch, h, w))
+                # fuse scores among all crops
+                output = output.view(bs, crops, -1).mean(dim=1)
+            else:
+                output = model(input)
             loss = criterion(output, target)
 
             # measure accuracy and record loss

@@ -7,6 +7,13 @@ By using our code, we reproduce the results of three popular fine-grained benchm
 - [x] 2 x 1080Ti
 - [x] Cuda 9.0 with CuDNN 7.0
 
+#### Change log
+>**2019/01/22**
+>> Add Compact bilinear pooling method (`CBP.py`).
+>
+>> update the results of CBP.
+
+
 ## Results (top-1 accuracy rates, %)
 
 All the reproduced results use neither bounding boxes nor part annotations, and the SVM classifier is not performed.
@@ -98,19 +105,10 @@ All the reproduced results use neither bounding boxes nor part annotations, and 
           <td> reproduce</td>
       </tr>
      <tr>
-         <td rowspan="2" style="text-align:center;">VGG-D</td>
-         <td style="text-align:center;">16K</td>
-         <td style="text-align:center;"></td>
-         <td style="text-align:center;">TODO</td>
-         <td style="text-align:center;">-</td>
-         <td style="text-align:center;">TODO</td>
-         <td style="text-align:center;">-</td>
-         <td style="text-align:center;">TODO</td>
-     </tr>
-     <tr>
+         <td style="text-align:center;">VGG-D</td>
          <td style="text-align:center;">8K</td>
-         <td style="text-align:center;"></td>
-         <td style="text-align:center;">TODO</td>
+         <td style="text-align:center;">84.0</td>
+         <td style="text-align:center;"><b>83.8</b></td>
          <td style="text-align:center;">-</td>
          <td style="text-align:center;">TODO</td>
          <td style="text-align:center;">-</td>

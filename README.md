@@ -141,6 +141,7 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 │   │   ├── MPNCOV.py
 │   │   ├── GAvP.py
 │   │   ├── BCNN.py
+│   │   ├── CBP.py
 │   │   └── Custom.py
 │   └── torchviz
 │       ├── __init__.py

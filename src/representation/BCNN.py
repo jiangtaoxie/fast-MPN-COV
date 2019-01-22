@@ -1,3 +1,8 @@
+'''
+@file: BCNN.py
+@author: Jiangtao Xie
+@author: Peihua Li
+'''
 import torch
 import torch.nn as nn
 
