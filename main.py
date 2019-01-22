@@ -120,6 +120,11 @@ def main():
         representation = {'function':BCNN,
                           'is_vec':True,
                           'input_dim':2048}
+    elif args.representation == 'CBP':
+        representation = {'function':CBP,
+                          'thresh':1e-8,
+                          'projDim':8192,
+                          'input_dim': 512}
     else:
         warnings.warn('=> You did not choose a global image representation method!')
         representation = None # which for original vgg or alexnet

@@ -13,31 +13,29 @@ class CBP(nn.Module):
 
      Args:
          thresh: small positive number for computation stability
-         is_vec: whether the output is a vector or not
-         projDim: dimesion of output vector
+         projDim: projected dimension
          input_dim: the #channel of input feature
      """
-     def __init__(self, thresh=1e-8, is_vec=True, projDim=8192, input_dim=512):
+     def __init__(self, thresh=1e-8, projDim=8192, input_dim=512):
          super(CBP, self).__init__()
          self.thresh = thresh
          self.projDim = projDim
-         self.is_vec = is_vec
          self.input_dim = input_dim
          self.output_dim = projDim
          torch.manual_seed(1)
          self.h_ = [
-                 torch.randint(0, self.output_dim, (self.input_dim,)),
-                 torch.randint(0, self.output_dim, (self.input_dim,))
+                 torch.randint(0, self.output_dim, (self.input_dim,),dtype=torch.long),
+                 torch.randint(0, self.output_dim, (self.input_dim,),dtype=torch.long)
          ]
          self.weights_ = [
              (2 * torch.randint(0, 2, (self.input_dim,)) - 1).float(),
              (2 * torch.randint(0, 2, (self.input_dim,)) - 1).float()
          ]
 
-         indices1 =torch.LongTensor(torch.cat((torch.arange(input_dim).reshape(1, -1),
-                                               self.h_[0].reshape(1, -1)), dim=0))
-         indices2 =torch.LongTensor(torch.cat((torch.arange(input_dim).reshape(1, -1),
-                                               self.h_[1].reshape(1, -1)), dim=0))
+         indices1 = torch.cat((torch.arange(input_dim, dtype=torch.long).reshape(1, -1),
+                               self.h_[0].reshape(1, -1)), dim=0)
+         indices2 = torch.cat((torch.arange(input_dim, dtype=torch.long).reshape(1, -1),
+                               self.h_[1].reshape(1, -1)), dim=0)
 
          self.sparseM = [
              torch.sparse.FloatTensor(indices1, self.weights_[0], torch.Size([self.input_dim, self.output_dim])).to_dense(),
@@ -78,7 +76,5 @@ class CBP(nn.Module):
              y[interSmall, :] = tmp_y.view(torch.numel(interSmall), h, w, self.output_dim).sum(dim=1).sum(dim=1)
 
          y = self._signed_sqrt(y)
-         if self.is_vec:
-             y = y.view(y.size(0), -1)
          y = self._l2norm(y)
          return y
