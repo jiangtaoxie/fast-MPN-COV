@@ -1,4 +1,4 @@
-## Fine-tune
+## Fine-tune pre-trained model in PyTorch 
 
 By using our code, we reproduce the results of three popular fine-grained benchmarks.(i.e., Bird, Aircrafts and Cars) We will keep updating the results of this page.
 
@@ -16,7 +16,7 @@ By using our code, we reproduce the results of three popular fine-grained benchm
 
 ## Results (top-1 accuracy rates, %)
 
-All the reproduced results use neither bounding boxes nor part annotations, and the SVM classifier is not performed.
+All the reproduced results use neither bounding boxes nor part annotations, and the SVM classifier is not performed.m
 
 #### MPN-COV (ours)
 <table>
