@@ -121,7 +121,7 @@ class Sqrtm(Function):
          Z = torch.eye(dim,dim,device = x.device).view(1,dim,dim).repeat(batchSize,iterN,1,1).type(dtype)
          if iterN < 2:
             ZY = 0.5*(I3 - A)
-            Y[:,0,:,:] = A.bmm(ZY)
+            YZY = A.bmm(ZY)
          else:
             ZY = 0.5*(I3 - A)
             Y[:,0,:,:] = A.bmm(ZY)
@@ -130,9 +130,9 @@ class Sqrtm(Function):
                ZY = 0.5*(I3 - Z[:,i-1,:,:].bmm(Y[:,i-1,:,:]))
                Y[:,i,:,:] = Y[:,i-1,:,:].bmm(ZY)
                Z[:,i,:,:] = ZY.bmm(Z[:,i-1,:,:])
-            ZY = 0.5*Y[:,iterN-2,:,:].bmm(I3 - Z[:,iterN-2,:,:].bmm(Y[:,iterN-2,:,:]))
-         y = ZY*torch.sqrt(normA).view(batchSize, 1, 1).expand_as(x)
-         ctx.save_for_backward(input, A, ZY, normA, Y, Z)
+            YZY = 0.5*Y[:,iterN-2,:,:].bmm(I3 - Z[:,iterN-2,:,:].bmm(Y[:,iterN-2,:,:]))
+         y = YZY*torch.sqrt(normA).view(batchSize, 1, 1).expand_as(x)
+         ctx.save_for_backward(input, A, YZY, normA, Y, Z)
          ctx.iterN = iterN
          return y
      @staticmethod
@@ -164,6 +164,7 @@ class Sqrtm(Function):
                dldY = dldY_
                dldZ = dldZ_
             der_NSiter = 0.5*(dldY.bmm(I3 - A) - dldZ - A.bmm(dldY))
+         der_NSiter = der_NSiter.transpose(1, 2)
          grad_input = der_NSiter.div(normA.view(batchSize,1,1).expand_as(x))
          grad_aux = der_NSiter.mul(x).sum(dim=1).sum(dim=1)
          for i in range(batchSize):
