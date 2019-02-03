@@ -76,7 +76,7 @@ def preprocess_strategy(dataset):
             normalize,
         ])
         evaluate_transforms = transforms.Compose([
-            transforms.Resize(448),
+            transforms.Resize((512,512)),
             CenterCropWithFlip(448),
             transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
             transforms.Lambda(lambda crops: torch.stack([normalize(crop) for crop in crops])),
