@@ -6,6 +6,7 @@ from .vgg import *
 from .resnet import *
 from .inception import *
 from .mpncovresnet import *
+from .densenet import *
 
 def get_basemodel(modeltype, pretrained=False):
     modeltype = globals()[modeltype]
@@ -92,6 +93,11 @@ class Basemodel(nn.Module):
         return model
     def _reconstruct_densenet(self, basemodel):
         model = nn.Module()
+        model.features = basemodel.features
+        model.features.add_module('last_relu', nn.ReLU(inplace=True))
+        model.representation = nn.AdaptiveAvgPool2d((1, 1))
+        model.classifier = basemodel.classifier
+        model.representation_dim=basemodel.classifier.weight.size(1)
         return model
     def _reconstruct_mpncovresnet(self, basemodel):
         model = nn.Module()
