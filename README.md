@@ -208,7 +208,7 @@ For making our Fast MPN-COV meta layer can be added in a network conveniently, w
 ## Other Implementations
 
 1. [MatConvNet Implementation](https://github.com/jiangtaoxie/matconvnet.fast-mpn-cov)
-2. [TensorFlow Implemention](./TensorFlow)(coming soon)
+2. [TensorFlow Implemention](https://github.com/XuChunqiao/Tensorflow-Fast-MPNCOV)
 
 ## Contact
 
