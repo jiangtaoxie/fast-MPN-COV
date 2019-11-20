@@ -7,6 +7,7 @@ from .resnet import *
 from .inception import *
 from .mpncovresnet import *
 from .densenet import *
+from .mpncovvgg import *
 
 def get_basemodel(modeltype, pretrained=False):
     modeltype = globals()[modeltype]
@@ -36,6 +37,8 @@ class Basemodel(nn.Module):
             basemodel = self._reconstruct_densenet(basemodel)
         if modeltype.startswith('mpncovresnet'):
             basemodel = self._reconstruct_mpncovresnet(basemodel) #
+        if modeltype.startswith('mpncovvgg'):
+            basemodel = self._reconstruct_mpncov_vgg(basemodel)
         self.features = basemodel.features
         self.representation = basemodel.representation
         self.classifier = basemodel.classifier
@@ -109,7 +112,14 @@ class Basemodel(nn.Module):
             model.representation_dim=basemodel.layer_reduce.weight.size(1)
         model.representation = None
         model.classifier = basemodel.fc
+        return model
 
+    def _reconstruct_mpncov_vgg(self, basemodel):
+        model = nn.Module()
+        model.features = basemodel.features
+        model.representation = basemodel.representation
+        model.classifier = basemodel.classifier
+        model.representation_dim = model.representation.output_dim
         return model
     def forward(self, x):
         x = self.features(x)

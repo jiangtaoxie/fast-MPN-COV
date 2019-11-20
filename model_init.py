@@ -59,4 +59,3 @@ class Newmodel(Basemodel):
 def get_model(modeltype, representation, num_classes, freezed_layer, pretrained=False):
     _model = Newmodel(modeltype, representation, num_classes, freezed_layer, pretrained=pretrained)
     return _model
-

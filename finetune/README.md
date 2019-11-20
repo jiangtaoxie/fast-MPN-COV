@@ -1,4 +1,4 @@
-## Fine-tune pre-trained model in PyTorch 
+## Fine-tune pre-trained model in PyTorch
 
 By using our code, we reproduce the results of three popular fine-grained benchmarks.(i.e., Bird, Aircrafts and Cars) We will keep updating the results of this page.
 
@@ -11,8 +11,10 @@ By using our code, we reproduce the results of three popular fine-grained benchm
 >**2019/01/22**
 >> Add Compact bilinear pooling method (`CBP.py`).
 >
->> update the results of CBP.
+>> Update the results of CBP.
 
+>**2019/11/18**
+>> Update the results of fast-MPN-COV-VGG-D. (`finetune_mpncovvggd16.sh`)
 
 ## Results (top-1 accuracy rates, %)
 
@@ -44,6 +46,16 @@ All the reproduced results use neither bounding boxes nor part annotations, and 
          <td style="text-align:center;"><b>90.3</b></td>
          <td style="text-align:center;">92.8</td>
          <td style="text-align:center;"><b>92.3</b></td>
+     </tr>
+     <tr>
+         <td style="text-align:center;">VGG-D</td>
+         <td style="text-align:center;">32K</td>
+         <td style="text-align:center;">87.2</td>
+         <td style="text-align:center;"><b>87.0</b></td>
+         <td style="text-align:center;">90.0</td>
+         <td style="text-align:center;"><b>91.7</b></td>
+         <td style="text-align:center;">92.5</td>
+         <td style="text-align:center;"><b>93.2</b></td>
      </tr>
      <tr>
          <td style="text-align:center;">ResNet-101</td>

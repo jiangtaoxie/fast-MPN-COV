@@ -47,13 +47,22 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;"><a href="https://pan.baidu.com/s/17JKyy7vlWMZWGcbqcyptFg">217.3MB</a></td>
          </tr>
          <tr>
+             <td style="text-align:center">fast MPN-COV-VGG-D</td>
+             <td style="text-align:center;">26.55</td>
+             <td style="text-align:center;"><b>23.98</b></td>
+             <td style="text-align:center;">8.94</td>
+             <td style="text-align:center;"><b>7.12 </b></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1wBAwSk51okzy-hwjrLrdNeA5bHs7YtZ0">289.9MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/1RbrQrrY0gEzLhkVTvdZTLQ">289.9MB</a></td>
+         </tr>
+         <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
              <td style="text-align:center;">21.21</td>
              <td style="text-align:center;"><b>20.99</b></td>
              <td style="text-align:center;">5.68</td>
              <td style="text-align:center;"><b>5.56</b></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1wBAwSk51okzy-hwjrLrdNeA5bHs7YtZ0">289.9MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/1RbrQrrY0gEzLhkVTvdZTLQ">289.9MB</a></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1oD2QydL8VvK2Zu6Ba5Xe3gFq3to8JsrN">650.4MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/10DmoGbuHjI_Nsd8bEbefsA">650.4MB</a></td>
          </tr>
 
 </table>
@@ -84,6 +93,16 @@ This paper concerns an iterative matrix square root normalization network (calle
          <td style="text-align:center;"><b>90.3</b></td>
          <td style="text-align:center;">92.8</td>
          <td style="text-align:center;"><b>92.3</b></td>
+     </tr>
+     <tr>
+         <td style="text-align:center;">VGG-D</td>
+         <td style="text-align:center;">32K</td>
+         <td style="text-align:center;">87.2</td>
+         <td style="text-align:center;"><b>87.0</b></td>
+         <td style="text-align:center;">90.0</td>
+         <td style="text-align:center;"><b>91.7</b></td>
+         <td style="text-align:center;">92.5</td>
+         <td style="text-align:center;"><b>93.2</b></td>
      </tr>
      <tr>
          <td style="text-align:center;">ResNet-101</td>
