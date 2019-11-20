@@ -38,15 +38,6 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;">BaiduCloud</td>
          </tr>
          <tr>
-             <td style="text-align:center">fast MPN-COV-ResNet50</td>
-             <td style="text-align:center;">22.14</td>
-             <td style="text-align:center;"><b>21.71</b></td>
-             <td style="text-align:center;">6.22</td>
-             <td style="text-align:center;"><b>6.13</b></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1h4JCWY9WfvFzNvwh2SOQwBOVVYpODuxg">217.3MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/17JKyy7vlWMZWGcbqcyptFg">217.3MB</a></td>
-         </tr>
-         <tr>
              <td style="text-align:center">fast MPN-COV-VGG-D</td>
              <td style="text-align:center;">26.55</td>
              <td style="text-align:center;"><b>23.98</b></td>
@@ -54,6 +45,15 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;"><b>7.12 </b></td>
              <td style="text-align:center;"><a href="https://drive.google.com/open?id=1oD2QydL8VvK2Zu6Ba5Xe3gFq3to8JsrN">650.4MB</a></td>
              <td style="text-align:center;"><a href="https://pan.baidu.com/s/10DmoGbuHjI_Nsd8bEbefsA">650.4MB</a></td>
+         </tr>
+         <tr>
+             <td style="text-align:center">fast MPN-COV-ResNet50</td>
+             <td style="text-align:center;">22.14</td>
+             <td style="text-align:center;"><b>21.71</b></td>
+             <td style="text-align:center;">6.22</td>
+             <td style="text-align:center;"><b>6.13</b></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1h4JCWY9WfvFzNvwh2SOQwBOVVYpODuxg">217.3MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/17JKyy7vlWMZWGcbqcyptFg">217.3MB</a></td>
          </tr>
          <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
@@ -84,16 +84,6 @@ This paper concerns an iterative matrix square root normalization network (calle
          <td> reproduce</td>
      </tr>
      <tr>
-         <td style="text-align:center;">ResNet-50</td>
-         <td style="text-align:center;">32K</td>
-         <td style="text-align:center;">88.1</td>
-         <td style="text-align:center;"><b>88.0</b></td>
-         <td style="text-align:center;">90.0</td>
-         <td style="text-align:center;"><b>90.3</b></td>
-         <td style="text-align:center;">92.8</td>
-         <td style="text-align:center;"><b>92.3</b></td>
-     </tr>
-     <tr>
          <td style="text-align:center;">VGG-D</td>
          <td style="text-align:center;">32K</td>
          <td style="text-align:center;">87.2</td>
@@ -102,6 +92,16 @@ This paper concerns an iterative matrix square root normalization network (calle
          <td style="text-align:center;"><b>91.7</b></td>
          <td style="text-align:center;">92.5</td>
          <td style="text-align:center;"><b>93.2</b></td>
+     </tr>
+     <tr>
+         <td style="text-align:center;">ResNet-50</td>
+         <td style="text-align:center;">32K</td>
+         <td style="text-align:center;">88.1</td>
+         <td style="text-align:center;"><b>88.0</b></td>
+         <td style="text-align:center;">90.0</td>
+         <td style="text-align:center;"><b>90.3</b></td>
+         <td style="text-align:center;">92.8</td>
+         <td style="text-align:center;"><b>92.3</b></td>
      </tr>
      <tr>
          <td style="text-align:center;">ResNet-101</td>
