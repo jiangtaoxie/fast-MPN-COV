@@ -52,8 +52,8 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;"><b>23.98</b></td>
              <td style="text-align:center;">8.94</td>
              <td style="text-align:center;"><b>7.12 </b></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1wBAwSk51okzy-hwjrLrdNeA5bHs7YtZ0">289.9MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/1RbrQrrY0gEzLhkVTvdZTLQ">289.9MB</a></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1oD2QydL8VvK2Zu6Ba5Xe3gFq3to8JsrN">650.4MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/10DmoGbuHjI_Nsd8bEbefsA">650.4MB</a></td>
          </tr>
          <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
@@ -61,10 +61,9 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;"><b>20.99</b></td>
              <td style="text-align:center;">5.68</td>
              <td style="text-align:center;"><b>5.56</b></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1oD2QydL8VvK2Zu6Ba5Xe3gFq3to8JsrN">650.4MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/10DmoGbuHjI_Nsd8bEbefsA">650.4MB</a></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1wBAwSk51okzy-hwjrLrdNeA5bHs7YtZ0">289.9MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/1RbrQrrY0gEzLhkVTvdZTLQ">289.9MB</a></td>
          </tr>
-
 </table>
 
 #### Fine-grained classification results (top-1 accuracy rates, %)
