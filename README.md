@@ -52,8 +52,8 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;"><b>21.71</b></td>
              <td style="text-align:center;">6.22</td>
              <td style="text-align:center;"><b>6.13</b></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1h4JCWY9WfvFzNvwh2SOQwBOVVYpODuxg">217.3MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/17JKyy7vlWMZWGcbqcyptFg">217.3MB</a></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=19TWen7p9UDyM0Ueu9Gb22NtouR109C6j">217.3MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/17TxANPJg_j2VyYgXV05OOQ">217.3MB</a></td>
          </tr>
          <tr>
              <td style="text-align:center">fast MPN-COV-ResNet101</td>
@@ -61,8 +61,8 @@ This paper concerns an iterative matrix square root normalization network (calle
              <td style="text-align:center;"><b>20.99</b></td>
              <td style="text-align:center;">5.68</td>
              <td style="text-align:center;"><b>5.56</b></td>
-             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1wBAwSk51okzy-hwjrLrdNeA5bHs7YtZ0">289.9MB</a></td>
-             <td style="text-align:center;"><a href="https://pan.baidu.com/s/1RbrQrrY0gEzLhkVTvdZTLQ">289.9MB</a></td>
+             <td style="text-align:center;"><a href="https://drive.google.com/open?id=1riur7v3rZ7vnrdj2UZ7EBaTKEGSccYwg">289.9MB</a></td>
+             <td style="text-align:center;"><a href="https://pan.baidu.com/s/1_H8MosgzPH0BBmlKw2sr5A">289.9MB</a></td>
          </tr>
 </table>
 

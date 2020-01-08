@@ -47,6 +47,7 @@ class stats:
 
 
 def vizNet(model, path):
+    model.eval()
     x = torch.randn(10,3,224,224)
     y = model(x)
     g = make_dot(y)
